@@ -100,5 +100,3 @@ pytest -q
 - MIT — see `LICENSE`.
 
 ---
-
-If you'd like, I can also add a short animated GIF or sample output screenshots to the README, or tune the Quickstart for a Windows-native, non-Docker flow. Which would you prefer next? 
