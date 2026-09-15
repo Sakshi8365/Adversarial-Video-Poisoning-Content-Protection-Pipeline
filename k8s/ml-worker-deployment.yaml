@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: adv-ml-worker
+  namespace: adv-protect
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: adv-ml-worker
+  template:
+    metadata:
+      labels:
+        app: adv-ml-worker
+    spec:
+      containers:
+        - name: ml-worker
+          image: adv-protect/worker:gpu-latest
+          env:
+            - name: REDIS_URL
+              value: "${REDIS_URL}"
+            - name: DATABASE_URL
+              value: "${DATABASE_URL}"
+          resources:
+            limits:
+              nvidia.com/gpu: 1
+          # Node selector / tolerations can be added by the operator to schedule on GPU nodes

@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: adv-api
+  namespace: adv-protect
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: adv-api
+  template:
+    metadata:
+      labels:
+        app: adv-api
+    spec:
+      containers:
+        - name: api
+          image: adv-protect/api:latest
+          ports:
+            - containerPort: 8000
+          env:
+            - name: DATABASE_URL
+              value: "${DATABASE_URL}"
+            - name: REDIS_URL
+              value: "${REDIS_URL}"

@@ -1,0 +1,20 @@
+ARG BASE_IMAGE=python:3.11-slim
+FROM ${BASE_IMAGE} as base
+
+WORKDIR /app
+
+ENV PYTHONDONTWRITEBYTECODE=1 \
+    PYTHONUNBUFFERED=1
+
+COPY requirements.txt /app/requirements.txt
+# Increase pip timeout to avoid intermittent network read timeouts when downloading large wheels
+ENV PIP_DEFAULT_TIMEOUT=120
+RUN pip --default-timeout=120 install --no-cache-dir -r /app/requirements.txt
+
+# Copy full project so worker can import shared modules (cache, ml, api utils)
+COPY . /app
+
+# Install lightweight tools needed for video processing
+RUN apt-get update && apt-get install -y ffmpeg && rm -rf /var/lib/apt/lists/*
+
+CMD ["python", "-u", "workers/video_worker.py"]

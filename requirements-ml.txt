@@ -1,0 +1,7 @@
+numpy>=1.24,<1.27
+opencv-python>=4.8.0,<5.0
+ffmpeg-python>=0.2.0,<0.4
+# Use torch 2.0.1 to match torchvision 0.15.2
+torch==2.0.1
+torchvision==0.15.2
+ultralytics>=8.0.99

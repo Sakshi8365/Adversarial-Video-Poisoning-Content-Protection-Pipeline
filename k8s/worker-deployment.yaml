@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: adv-worker
+  namespace: adv-protect
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: adv-worker
+  template:
+    metadata:
+      labels:
+        app: adv-worker
+    spec:
+      containers:
+        - name: worker
+          image: adv-protect/worker:latest
+          env:
+            - name: REDIS_URL
+              value: "${REDIS_URL}"
+            - name: DATABASE_URL
+              value: "${DATABASE_URL}"
+          resources:
+            requests:
+              cpu: "500m"
+              memory: "1Gi"
+            limits:
+              cpu: "1"
+              memory: "2Gi"

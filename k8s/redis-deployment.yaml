@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: adv-redis
+  namespace: adv-protect
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: adv-redis
+  template:
+    metadata:
+      labels:
+        app: adv-redis
+    spec:
+      containers:
+        - name: redis
+          image: redis:7-alpine
+          ports:
+            - containerPort: 6379
