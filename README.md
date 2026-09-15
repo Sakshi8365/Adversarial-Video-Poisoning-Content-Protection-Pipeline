@@ -2,6 +2,8 @@
 
 A production-grade, local-first reference for ingesting, processing, protecting, and validating video artifacts in a YouTube-style pipeline.
 
+**Defensive research demo.** Not affiliated with YouTube or Google. Model-dependent protection is not guaranteed against scraping, training, or future adaptive defenses.
+
 **What this project is**
 - A compact end-to-end stack that accepts uploads, enqueues processing jobs, runs a resilient video worker (OpenCV + ffmpeg), and produces protection & robustness reports.
 - Useful for research, demos, CI-based runtime validation, and testing defenses against simple adversarial perturbations.
