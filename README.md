@@ -24,11 +24,11 @@ A production-grade, local-first reference for ingesting, processing, protecting,
 
 ```mermaid
 flowchart LR
-	U[Uploader (FastAPI)] -->|POST /upload| S[Storage (.part → atomic replace)]
-	S -->|enqueue| Q[Redis queue]
-	Q --> W[Worker: OpenCV → ffmpeg fallback]
-	W --> R[Protected artifact + Report]
-	R -->|store| S
+	U[Uploader<br/>FastAPI] --> |"POST /upload"| S[Storage<br/>.part → atomic replace]
+	S --> |enqueue| Q[Redis queue]
+	Q --> W[Worker<br/>OpenCV → ffmpeg fallback]
+	W --> R[Protected artifact<br/>Report]
+	R --> |store| S
 ```
 
 Quick demo flow: upload → queued → processed → `uploads/protected-<job_id>.mp4` + report JSON.
