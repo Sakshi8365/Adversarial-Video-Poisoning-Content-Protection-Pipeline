@@ -92,6 +92,8 @@ pytest -q
 - Do NOT commit secrets or large media. Use `.env` for local secrets (see `.env.example`).
 - If secrets were committed historically, purge history with `git filter-repo` or `bfg` before publishing.
 
+- **Defensive research demo:** Not affiliated with YouTube / Google. Model-dependent protection is not a guarantee against scraping, training, or future adaptive defenses.
+
 ## Contributing
 
 - Small PRs welcome. Use the included `CONTRIBUTING.md` and PR template.
