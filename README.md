@@ -1,6 +1,6 @@
 # Adversarial Video Poisoning & Content Protection Pipeline
 
-A production-grade, local-first reference for ingesting, processing, protecting, and validating video artifacts in a YouTube-style pipeline.
+A production-oriented, local-first reference for ingesting, processing, protecting, and validating video artifacts in a YouTube-style pipeline.
 
 **Defensive research demo.** Not affiliated with YouTube or Google. Model-dependent protection is not guaranteed against scraping, training, or future adaptive defenses.
 
