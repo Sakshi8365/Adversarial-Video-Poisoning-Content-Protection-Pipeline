@@ -2,11 +2,6 @@
 
 > A local-first, asynchronous video-processing platform for defensive research, media robustness experiments, and production-style pipeline demos.
 
-[![Python](https://img.shields.io/badge/Python-3.11-3776AB?logo=python&logoColor=white)](https://www.python.org/)
-[![FastAPI](https://img.shields.io/badge/API-FastAPI-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
-[![Redis](https://img.shields.io/badge/Queue-Redis-DC382D?logo=redis&logoColor=white)](https://redis.io/)
-[![OpenCV](https://img.shields.io/badge/Video-OpenCV-5C3EE8?logo=opencv&logoColor=white)](https://opencv.org/)
-
 **Defensive research demo.** This project is not affiliated with YouTube or Google. Model-dependent protection is experimental and is not a guarantee against scraping, training, or future adaptive defenses.
 
 ## Why this project?
