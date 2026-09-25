@@ -193,3 +193,9 @@ Planned production improvements:
 ## Contributing
 
 Small, focused pull requests are welcome. Please include reproducible steps, tests for behavioral changes, and documentation updates where appropriate. See [CONTRIBUTING.md](CONTRIBUTING.md).
+
+## License
+
+MIT License.
+
+---
